@@ -7,12 +7,13 @@ class App extends React.Component {
 
   state = { images: [] };
 
-  constructor(){
-    super();
-    this.onSearchSubmit = this.onSearchSubmit.bind(this);
-  }
+  // constructor(){
+  //   super();
+  // bind onserachsubmit with this class instance
+  //   this.onSearchSubmit = this.onSearchSubmit.bind(this);
+  // }
 
-  async onSearchSubmit(term) {
+  onSearchSubmit = async (term) => {
     const response = await axios.get('https://api.unsplash.com/search/photos', {
         params: { query: term },
         headers: {
